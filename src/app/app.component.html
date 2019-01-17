@@ -1,0 +1,43 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div applyStyle>This element will a few styles from the directive!</div>
+
+<div [myAttr]="spanStyle">This directive applies the styles it accepts</div>
+<button (click)="changeStyle()">Change Style</button>
+
+<div>
+  <span [hostBindings]="spanStyle2">This directive applies the styles it accepts</span>
+  <br>
+  <button (click)="changeStyle2()">Change Style</button>
+</div>
+
+<div>
+  <h3>
+    Testing pipes
+  </h3>
+
+  <div>Strings: </div>
+  <ul>
+    <li *ngFor="let m of messages">{{m | defaultvalue:'string'}}</li>
+  </ul>
+  <br>
+  <div>Numbers: </div>
+  <ul>
+    <li *ngFor="let n of numbers">{{n | defaultvalue:'number'}}</li>
+  </ul>
+  <br>
+  <div>
+    Objects:
+    <ul>
+      <li>{{weather | defaultvalue:'object' | json}} </li>
+      <li>{{weather2 | defaultvalue:'object' | json}}</li>
+    </ul>
+  </div>
+  <br>
+  <div>
+    Boolean values:
+    <ul>
+      <li>{{isTrue | defaultvalue:'boolean'}}</li>
+      <li>{{isFalse | defaultvalue:'boolean'}}</li>
+    </ul>
+  </div>
+</div>
